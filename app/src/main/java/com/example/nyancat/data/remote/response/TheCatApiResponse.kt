@@ -3,7 +3,6 @@ package com.example.nyancat.data.remote.response
 import com.google.gson.annotations.SerializedName
 
 data class TheCatApiResponse(
-
 	@field:SerializedName("TheCatApiResponse")
 	val theCatApiResponse: List<TheCatApiResponseItem>
 )
@@ -18,22 +17,18 @@ data class Weight(
 )
 
 data class TheCatApiResponseItem(
-
-	@field:SerializedName("width")
-	val width: Int,
-
-	@field:SerializedName("id")
-	val id: String,
-
-	@field:SerializedName("url")
-	val url: String,
-
 	@field:SerializedName("breeds")
 	val breeds: List<BreedsItem>,
-
+	@field:SerializedName("id")
+	val id: String,
+	@field:SerializedName("url")
+	val url: String,
+	@field:SerializedName("width")
+	val width: Int,
 	@field:SerializedName("height")
 	val height: Int
 )
+
 
 data class BreedsItem(
 
