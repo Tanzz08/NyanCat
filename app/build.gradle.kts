@@ -66,6 +66,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.benchmark.common)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -87,5 +91,18 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.ktx) //viewModelScope
     implementation (libs.androidx.lifecycle.livedata.ktx) //liveData
     implementation (libs.androidx.room.ktx)
+
+    // viewmodel ke compsable
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // dependesi coil untuk AsyncImage
+    implementation(libs.coil.compose)
+
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // navigation
+    implementation (libs.androidx.navigation.compose)
+
+
 
 }
