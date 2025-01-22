@@ -13,19 +13,28 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModelProvider
 import com.example.nyancat.ui.theme.NyanCatTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Ambil instance ViewModelFactory
+        val factory = ViewModelFactory.getInstance(applicationContext)
+
+        // Buat ViewModel menggunakan ViewModelProvider dan factory
+        val viewModel = ViewModelProvider(this, factory)[NyanCatViewModel::class.java]
+
+        // Set content menggunakan Compose
         setContent {
             NyanCatTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    // Panggil NyanCatApp dan passing ViewModel
+                    NyanCatApp(viewModel = viewModel, activity = this)
                 }
             }
         }
